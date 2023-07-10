@@ -13,7 +13,7 @@ const Resorts = () => {
 
   useEffect(() => {
     const getResorts = async () => {
-      await axios.get('http://localhost:3001/api/resort')
+      await axios.get('http://54.193.32.199:3001/api/resort')
         .then(res => {
           console.log(res.data)
           setResorts(res.data)
@@ -32,7 +32,7 @@ const Resorts = () => {
     // const r = region? `region=${region}&` : ''
     // const p = program? `program=${program}&` : ''
     // const t = trails? `trails=${trails}&` : ''
-    await axios.get(`http://localhost:3001/api/resort?` + s)
+    await axios.get(`http://54.193.32.199:3001/api/resort?` + s)
       .then(res => {
         console.log(res.data)
         setResorts(res.data)

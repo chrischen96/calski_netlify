@@ -12,7 +12,7 @@ export const useSignup = () => {
         setError(null);
         console.log({ email, password })
 
-        await axios.post('http://localhost:3001/api/user/signup', { email, password })
+        await axios.post('http://54.193.32.199:3001/api/user/signup', { email, password })
             .then(res => {
                 // save the user to local storage
                 localStorage.setItem('user', JSON.stringify(res.data));

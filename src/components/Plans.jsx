@@ -13,8 +13,8 @@ const Plans = () => {
 
   useEffect(() => {
     const getPlan = async () => {
-      //const response = await axios.get('http://localhost:3001/api/plan', { headers: { Authorization: localStorage.getItem('user') } })
-      const response = await axios.get('http://localhost:3001/api/plan',
+      //const response = await axios.get('http://54.193.32.199:3001/api/plan', { headers: { Authorization: localStorage.getItem('user') } })
+      const response = await axios.get('http://54.193.32.199:3001/api/plan',
         { headers: { Authorization: `Bearer ${localUser.token}` } })
       setPlans(response.data)
       console.log(response)
@@ -25,7 +25,7 @@ const Plans = () => {
   }, [plan])
 
   const deletePlan = async (plan) => {
-    axios.delete(`http://localhost:3001/api/plan/${plan}`, { headers: { Authorization: `Bearer ${localUser.token}` } })
+    axios.delete(`http://54.193.32.199:3001/api/plan/${plan}`, { headers: { Authorization: `Bearer ${localUser.token}` } })
       .then(res => {
         console.log(res)
         window.location.reload()
@@ -46,7 +46,7 @@ const Plans = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.put(`http://localhost:3001/api/plan/${plan._id}`, plan, { headers: { Authorization: `Bearer ${localUser.token}` } })
+    await axios.put(`http://54.193.32.199:3001/api/plan/${plan._id}`, plan, { headers: { Authorization: `Bearer ${localUser.token}` } })
       .then(res => {
         console.log(res)
         window.location.reload()

@@ -15,7 +15,7 @@ export const useLogin = () => {
         console.log({email, password})
 
        
-        await axios.post('http://localhost:3001/api/user/login', { email, password })
+        await axios.post('http://54.193.32.199:3001/api/user/login', { email, password })
             .then(res => {
                 console.log(res.data);
                 localStorage.setItem('user', JSON.stringify(res.data));
