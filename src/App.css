@@ -1,0 +1,373 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.App-main {
+  min-height: calc(100vh - 226px);
+}
+
+.logo {
+  height: 60px;
+  padding: 0;
+  will-change: filter;
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* home page */
+.home-content-1 {
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-image: url('./assets/hero-1.jpg');
+  margin-bottom: 10px;
+}
+
+.text-wrapper {
+  padding-top: 80px;
+}
+
+.home-content-2 {
+  height: 600px;
+  background-size: cover;
+  background-position: top;
+  background-image: url('./assets/tahoe-ski-3.jpg');
+  margin-bottom: 10px;
+}
+
+.home-content-3 {
+  height: 600px;
+  background-size: cover;
+  background-position: top;
+  background-image: url('./assets/diamond-peak.jpg');
+  margin-bottom: 10px;
+}
+
+
+.nav-bar {
+  font-size: 20px;
+}
+
+.nav-bar li {
+  margin-right: 20px;
+}
+
+.nav-bar a {
+  color: #121111;
+}
+
+.nav-bar a:hover {
+  color: #1468d6;
+}
+
+/* resorts */
+
+.resorts-intro {
+  width: 80%;
+  margin: 0 auto;
+  text-align: justify;
+  text-align-last: center;
+  padding-bottom: 50px;
+  padding-top: 40px;
+  font-size: 21px;
+
+}
+
+.result-clear-btn {
+  position: relative;
+  background: none;
+  border: 0;
+  box-sizing: content-box;
+  color: inherit;
+  cursor: pointer;
+  /* font: inherit; */
+  /* line-height: inherit; */
+  /* overflow: visible; */
+  vertical-align: inherit;
+  height: 40px
+}
+
+.resorts-search {
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* resort result list*/
+.result-list {
+  margin: 50px auto;
+  width: 980px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 40px;
+  justify-content: center;
+}
+
+.result-item {
+  width: 300px;
+}
+
+.item-card {
+  border-radius: 10px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+}
+
+.resorts .item-card {
+  cursor: pointer;
+}
+
+.resorts .item-card:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.plans .item-card:hover {
+  /* box-shadow: 12px 12px 12px rgb(113, 177, 245); */
+  box-shadow: 0 2px 10px rgba(58, 117, 175, 0.8);
+}
+
+.item-img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 20px;
+  min-height: 150px;
+}
+
+
+/* detail page */
+.detail-head {
+  width: 890px;
+  padding: 35px 0 48px 0;
+  margin: 0 auto;
+}
+
+.detail-head a {
+  font-weight: 500;
+  color: black;
+  text-decoration: inherit;
+}
+
+.detail-head-grid {
+  display: grid;
+  grid-template-columns: 35px 1fr 35px;
+  grid-template-areas: ". a .";
+}
+
+.detail-head-name {
+  grid-area: a;
+  text-align: center;
+}
+
+.detail-head button {
+  position: relative;
+  background: none;
+  border: 0;
+  box-sizing: content-box;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+  top: 2px;
+  left: -22px;
+  height: 40px
+}
+
+.detail-hero-img img {
+  border-radius: 15px;
+  width: 692px;
+}
+
+.resort-detail .result-list {
+  width: 692px;
+  margin: 0 auto;
+}
+
+.resort-detail .result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 320px);
+  grid-gap: 40px;
+  justify-content: center;
+}
+
+.resort-detail .result-item {
+  width: 320px;
+}
+
+/* .summary .item-card {
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+} */
+
+
+/* plans */
+.plans .button-wrapper button {
+  width: 75px;
+  border: 1px solid rgb(200, 200, 200);
+  box-shadow: 0px 0px 1px rgb(205, 205, 205);
+}
+
+.plans {
+  /* border: solid 10px rgb(58, 117, 175); */
+  border-radius: 20px;
+  padding: 50px auto 50px auto;
+}
+
+
+.plans-h1 {
+  padding: 30px 0px;
+  color: rgb(9, 9, 9);
+  font-size: 50px;
+}
+
+
+/* login */
+.login,
+.signup {
+  min-height: calc(100vh - 226px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(248, 249, 250);
+}
+
+.login img,
+.signup img {
+  width: 120px;
+  /* margin-bottom: 20px; */
+}
+
+.login-content,
+.signup-content {
+  width: 260px;
+  margin: 45px auto;
+  translate: 0 -40px;
+}
+
+.login button,
+.signup button {
+  width: 90px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+/* footer */
+
+.contact-us {
+  flex-wrap: wrap;
+  height: 100px;
+  background-color: rgb(26, 110, 171);
+}
+
+.contact-us h6 {
+  display: block;
+  font-size: 12px;
+  margin: 1px;
+  color: rgb(255, 251, 245);
+}
+
+.social-media {
+  background-color: rgb(220, 183, 17);
+  height: 40px;
+}
+
+.icon-row {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  padding: 6px;
+  width: 890px;
+  margin: auto;
+  height: 40px;
+}
+
+.icon-row .bi {
+  color: white;
+}
+
+.icon-row h3 {
+  margin: 0;
+  /* margin-left: 160px;
+  margin-right: 160px */
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+  .result-list,
+  .detail-head,
+  .icon-row,
+  .resorts-search {
+    width: 692px;
+  }
+
+  .result-grid {
+    grid-gap: 40px;
+  }
+}
+
+@media screen and (max-width: 734px) {
+
+  .result-list,
+  .detail-head,
+  .icon-row,
+  .resorts-search,
+  .resort-detail .result-list {
+    width: 87.5%;
+  }
+
+  .result-grid {
+    grid-gap: 25px;
+  }
+
+  .detail-hero-img img {
+    border-radius: 15px;
+    width: 66%;
+  }
+}
