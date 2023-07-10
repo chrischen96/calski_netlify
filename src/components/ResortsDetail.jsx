@@ -24,21 +24,26 @@ const ResortsDetail = () => {
           setFatmap(map)
           console.log(res.data.resort.programs)
           setPrograms(res.data.resort.programs)
+          if (localUser) {
+            setPlan({ ...plan, userName: localUser.email, resortName: res.data.resort.resortName })
+          }
         })
         .catch(err => console.log(err))
     }
     getResort()
   }, [])
 
-  console.log(programs)
+  console.log(plan)
 
   const handleChange = (e) => {
+    console.log(e.target)
     setPlan({ ...plan, [e.target.name]: e.target.value })
-    setPlan({ ...plan, userName: localUser.email, resortName: res.data.resort.resortName })
+    
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    console.log(plan)
     await axios.post('http://54.193.32.199:3001/api/plan', plan, { headers: { Authorization: `Bearer ${localUser.token}` } })
       .then(res => {
         // console.log(res)
@@ -77,7 +82,7 @@ const ResortsDetail = () => {
             {/* Ticket */}
             <div className="result-item ticket">
               <div className="item-card p-3 px-4 text-start" style={{ height: '' }}>
-                <h5 className="fw-bold lh-lg"><i class="bi bi-ticket-detailed"></i> Ticket Prices:</h5>
+                <h5 className="fw-bold lh-lg"><i className="bi bi-ticket-detailed"></i> Ticket Prices:</h5>
                 <p>Child: <span className="float-end">{resort.ticketChild ? `$ ${resort.ticketChild}` : 'N/A'}</span> </p>
                 <p>Youth: <span className="float-end">{resort.ticketYouth ? `$ ${resort.ticketYouth}` : 'N/A'}</span></p>
                 <p>Adult: <span className="float-end">{resort.ticketAdult ? `$ ${resort.ticketAdult}` : 'N/A'}</span></p>
@@ -88,7 +93,7 @@ const ResortsDetail = () => {
             {/* Statistics */}
             <div className="result-item statistics">
               <div className="item-card p-3 px-4 text-start" style={{ height: '' }}>
-                <h5 className="fw-bold lh-lg"><i class="bi bi-bar-chart-line"></i> Statistics:</h5>
+                <h5 className="fw-bold lh-lg"><i className="bi bi-bar-chart-line"></i> Statistics:</h5>
                 <p className="">Base Elevation: <span className="float-end">{resort.baseElevation} feet</span></p>
                 <p>Summit Elevation: <span className="float-end">{resort.summitElevation} feet</span></p>
                 <p>Vertical Rise: <span className="float-end">{resort.verticalRise} feet</span></p>
@@ -100,7 +105,7 @@ const ResortsDetail = () => {
             {/* Programs */}
             <div className="result-item programs">
               <div className="item-card p-3 px-4 text-start" style={{ height: '' }}>
-                <h5 className="fw-bold lh-lg"><i class="bi bi-card-checklist"></i> Programs:</h5>
+                <h5 className="fw-bold lh-lg"><i className="bi bi-card-checklist"></i> Programs:</h5>
                 <p className="">
                   Kids Program:
                   <span className="float-end">{programs.kidsProgram ? <i className="bi bi-check-circle-fill text-success"></i> : <i className="bi bi-x-circle-fill"></i>}</span>
@@ -127,7 +132,7 @@ const ResortsDetail = () => {
             {/* Contact */}
             <div className="result-item contact">
               <div className="item-card contact p-3 px-4 text-start" style={{ height: '' }}>
-                <h5 className="fw-bold lh-lg"><i class="bi bi-person-lines-fill"></i> Contacts:</h5>
+                <h5 className="fw-bold lh-lg"><i className="bi bi-person-lines-fill"></i> Contacts:</h5>
                 <p className="">Address: <br /> <span className="">{resort.contactAddress}</span></p>
                 <p>Email: <br /> <span className="">{resort.contactEmail}</span></p>
                 <p>Website: <br /> <a className="" href={`${resort.contactWebsite}`} target="_blank">{resort.contactWebsite}</a></p>
