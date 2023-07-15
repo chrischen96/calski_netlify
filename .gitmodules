@@ -1,0 +1,3 @@
+[submodule "calski_server"]
+	path = calski_server
+	url = https://github.com/chrischen96/calski_server.git
